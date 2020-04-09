@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <YoutubePlayer video_url='https://www.youtube.com/embed/videoseries?list=PLx0sYbCqOb8TBPRdmBHs5Iftvv9TPboYG'/> 
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import YoutubePlayer from './components/YoutubePlayer.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    YoutubePlayer
   }
 }
 </script>
