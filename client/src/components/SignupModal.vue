@@ -1,5 +1,5 @@
 <template>
-  <v-dialog v-model="showDialog" max-width="500" @click:outside="$emit('close-signup-dialog')">
+  <v-dialog v-model="show" max-width="500" @click:outside="$emit('close-signup-dialog')">
     <v-card>
           <v-card-title>
             <span class="headline">Sign Up</span>
@@ -38,7 +38,9 @@
 
 <script>
 export default {
-  props:['showDialog'],
+  props: {
+    show: Boolean
+  },
   data:() => ({
     valid: true,
     username: '',

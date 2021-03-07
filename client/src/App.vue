@@ -14,7 +14,7 @@
       <v-btn
         target="_blank"
         text
-        @click.stop="signupDialog = true"
+        @click.stop="showSignupModal = true"
       >
         <span class="mr-2">Sign Up</span>
       </v-btn>
@@ -24,29 +24,29 @@
       <YoutubePlayer video_url='https://www.youtube.com/embed/5wvTs-1jUFE'/>
     </v-content>
 
-    <SignupPopover :showDialog="signupDialog" v-on:close-signup-dialog="closeSignupModal"/>
+    <SignupModal :show="showSignupModal" @close-signup-dialog="closeSignupModal"/>
   </v-app>
 </template>
 
 <script>
 import YoutubePlayer from './components/YoutubePlayer'
-import SignupPopover from './components/SignupPopover'
+import SignupModal from './components/SignupModal'
 
 export default {
   name: 'App',
 
   components: {
     YoutubePlayer,
-    SignupPopover
+    SignupModal
   },
 
   data: () => ({
-    signupDialog: false
+    showSignupModal: false
   }),
 
   methods: {
     closeSignupModal () {
-      this.signupDialog = false;
+      this.showSignupModal = false;
     }
   }
 };
